@@ -1,20 +1,20 @@
 <h1 align="center">
   😍 + 🚀
-  <br>Spaceship Section<br>
+  <br>Spaceship Flox<br>
 </h1>
 
 <h4 align="center">
-  A <a href="https://template.com" target="_blank">Foobar</a> section for Spaceship prompt
+  A <a href="https://flox.dev" target="_blank">Flox</a> section for Spaceship prompt
 </h4>
 
 <p align="center">
-  <a href="https://github.com/spaceship-prompt/spaceship-section/releases">
-    <img src="https://img.shields.io/github/v/release/spaceship-prompt/spaceship-section.svg?style=flat-square"
+  <a href="https://github.com/pfridberg/spaceship-flox/releases">
+    <img src="https://img.shields.io/github/v/release/pfridberg/spaceship-flox.svg?style=flat-square"
       alt="GitHub Release" />
   </a>
 
-  <a href="https://github.com/spaceship-prompt/spaceship-section/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/spaceship-prompt/spaceship-section/ci.yaml?style=flat-square"
+  <a href="https://github.com/pfridberg/spaceship-flox/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/pfridberg/spaceship-flox/ci.yaml?style=flat-square"
       alt="GitHub Workflow Status" />
   </a>
 
@@ -31,7 +31,7 @@
   </a>
 </p>
 
-Current Foobar version, through foobar (`😍`).
+Current Flox environment, through `$FLOX_PROMPT_ENVIRONMENTS`.
 
 ## Installing
 
@@ -42,91 +42,90 @@ You need to source this plugin somewhere in your dotfiles. Here's how to do it w
 Execute this command to clone this repo into Oh-My-Zsh plugin's folder:
 
 ```zsh
-git clone https://github.com/spaceship-prompt/spaceship-section.git $ZSH_CUSTOM/plugins/spaceship-section
+git clone https://github.com/pfridberg/spaceship-flox.git $ZSH_CUSTOM/plugins/spaceship-flox
 ```
 
-Include `spaceship-section` in Oh-My-Zsh plugins list:
+Include `spaceship-flox` in Oh-My-Zsh plugins list:
 
 ```zsh
-plugins=($plugins spaceship-section)
+plugins=($plugins spaceship-flox)
 ```
 
 ### [zplug]
 
 ```zsh
-zplug "spaceship-prompt/spaceship-section"
+zplug "pfridberg/spaceship-flox"
 ```
 
 ### [antigen]
 
 ```zsh
-antigen bundle "spaceship-prompt/spaceship-section"
+antigen bundle "pfridberg/spaceship-flox"
 ```
 
 ### [antibody]
 
 ```zsh
-antibody bundle "spaceship-prompt/spaceship-section"
+antibody bundle "pfridberg/spaceship-flox"
 ```
 
 ### [zinit]
 
 ```zsh
-zinit light "spaceship-prompt/spaceship-section"
+zinit light "pfridberg/spaceship-flox"
 ```
 
 ### [zgen]
 
 ```zsh
-zgen load "spaceship-prompt/spaceship-section"
+zgen load "pfridberg/spaceship-flox"
 ```
 
 ### [sheldon]
 
 ```toml
-[plugins.spaceship-section]
-github = "spaceship-prompt/spaceship-section"
+[plugins.spaceship-flox]
+github = "pfridberg/spaceship-flox"
 ```
 
 ### Manual
 
 If none of the above methods works for you, you can install Spaceship manually.
 
-1. Clone this repo somewhere, for example to `$HOME/.zsh/spaceship-section`.
+1. Clone this repo somewhere, for example to `$HOME/.zsh/spaceship-flox`.
 2. Source this section in your `~/.zshrc`.
 
 ### Example
 
 ```zsh
 mkdir -p "$HOME/.zsh"
-git clone --depth=1 https://github.com/spaceship-prompt/spaceship-section.git "$HOME/.zsh/spaceship-section"
+git clone --depth=1 https://github.com/pfridberg/spaceship-flox.git "$HOME/.zsh/spaceship-flox"
 ```
 
 For initializing prompt system add this to your `.zshrc`:
 
 ```zsh title=".zshrc"
-source "~/.zsh/spaceship-section/spaceship-section.plugin.zsh"
+source "~/.zsh/spaceship-flox/spaceship-flox.plugin.zsh"
 ```
 
 ## Usage
 
-After installing, add the following line to your `.zshrc` in order to include Ember section in the prompt:
+After installing, add the following line to your `.zshrc` in order to include Flox section in the prompt:
 
 ```zsh
-spaceship add foobar
+spaceship add flox
 ```
 
 ## Options
 
-This section is shown only in directories within a foobar context.
+This section is shown only when a Flox environment is active.
 
 | Variable                  |              Default               | Meaning                              |
-| :------------------------ | :--------------------------------: | ------------------------------------ |
-| `SPACESHIP_FOOBAR_SHOW`   |               `true`               | Show current section                 |
-| `SPACESHIP_FOOBAR_PREFIX` | `$SPACESHIP_PROMPT_DEFAULT_PREFIX` | Prefix before section                |
-| `SPACESHIP_FOOBAR_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after section                 |
-| `SPACESHIP_FOOBAR_SYMBOL` |               `😍·`                | Character to be shown before version |
-| `SPACESHIP_FOOBAR_COLOR`  |              `yellow`              | Color of section                     |
+|:--------------------------|:----------------------------------:| ------------------------------------ |
+| `SPACESHIP_FLOX_SHOW`     |               `true`               | Show current section                 |
+| `SPACESHIP_FLOX_PREFIX`   |              `flox:`               | Prefix before section                |
+| `SPACESHIP_FLOX_SUFFIX`   | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after section                 |
+| `SPACESHIP_FLOX_COLOR`    |              `yellow`              | Color of section                     |
 
 ## Contributing
 
@@ -136,7 +135,7 @@ Contribute to this repo by submitting a pull request. Please use [conventional c
 
 ## License
 
-MIT © [Name Surname](http://yourwebsite.com)
+MIT © [Patrik Fridberg Bakken](https://github.com/pfridberg)
 
 <!-- References -->
 
