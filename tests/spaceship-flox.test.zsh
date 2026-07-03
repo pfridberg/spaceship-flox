@@ -8,11 +8,8 @@ SHUNIT_PARENT=$0
 # Use system Spaceship or fallback to Spaceship Docker on CI
 typeset -g SPACESHIP_ROOT="${SPACESHIP_ROOT:=/spaceship}"
 
-# Mocked tool CLI
-mocked_version="v1.0.0-mocked"
-foobar() {
-  echo "$mocked_version"
-}
+# Mocked environment name
+mocked_env="mockenv"
 
 # ------------------------------------------------------------------------------
 # SHUNIT2 HOOKS
@@ -27,12 +24,12 @@ oneTimeSetUp() {
   export TERM="xterm-256color"
 
   source "$SPACESHIP_ROOT/spaceship.zsh"
-  source "$(dirname $CWD)/spaceship-section.plugin.zsh"
+  source "$(dirname $CWD)/spaceship-flox.plugin.zsh"
 
   SPACESHIP_PROMPT_ASYNC=false
   SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
   SPACESHIP_PROMPT_ADD_NEWLINE=false
-  SPACESHIP_PROMPT_ORDER=(foobar)
+  SPACESHIP_PROMPT_ORDER=(flox)
 
   echo "Spaceship version: $(spaceship --version)"
 }
@@ -48,25 +45,18 @@ oneTimeTearDown() {
 # TEST CASES
 # ------------------------------------------------------------------------------
 
-test_incorrect_env() {
-  local expected=""
-  local actual="$(spaceship::testkit::render_prompt)"
-
-  assertEquals "do not render system version" "$expected" "$actual"
-}
-
 test_mocked_version() {
   # Prepare the environment
-  touch $SHUNIT_TMPDIR/test.foo
+  FLOX_PROMPT_ENVIRONMENTS=$mocked_env
 
-  local prefix="%{%B%}$SPACESHIP_FOOBAR_PREFIX%{%b%}"
-  local content="%{%B%F{$SPACESHIP_FOOBAR_COLOR}%}$SPACESHIP_FOOBAR_SYMBOL$mocked_version%{%b%f%}"
-  local suffix="%{%B%}$SPACESHIP_FOOBAR_SUFFIX%{%b%}"
+  local prefix="%{%B%}$SPACESHIP_FLOX_PREFIX%{%b%}"
+  local content="%{%B%F{$SPACESHIP_FLOX_COLOR}%}($mocked_env)%{%b%f%}"
+  local suffix="%{%B%}$SPACESHIP_FLOX_SUFFIX%{%b%}"
 
   local expected="$prefix$content$suffix"
   local actual="$(spaceship::testkit::render_prompt)"
 
-  assertEquals "render mocked version" "$expected" "$actual"
+  assertEquals "render mocked environment" "$expected" "$actual"
 }
 
 # ------------------------------------------------------------------------------
