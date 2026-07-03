@@ -1,0 +1,4 @@
+# Ignore editor specific project files
+.idea/
+*.iml
+.vscode/
