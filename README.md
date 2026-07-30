@@ -1,5 +1,5 @@
 <h1 align="center">
-  😍 + 🚀
+  <img itemprop="image" class="avatar flex-shrink-0 tmp-mb-3 tmp-mr-3 mb-md-0 tmp-mr-md-4" src="https://avatars.githubusercontent.com/u/72631827?s=200&amp;v=4" width="25" height="25" alt="@flox" /> + 🚀
   <br>Spaceship Flox<br>
 </h1>
 
@@ -54,38 +54,38 @@ plugins=($plugins spaceship-flox)
 ### [zplug]
 
 ```zsh
-zplug "pfridberg/spaceship-flox"
+zplug "pfridberg/spaceship-flox@main"
 ```
 
 ### [antigen]
 
 ```zsh
-antigen bundle "pfridberg/spaceship-flox"
+antigen bundle "pfridberg/spaceship-flox@main"
 ```
 
 ### [antibody]
 
 ```zsh
-antibody bundle "pfridberg/spaceship-flox"
+antibody bundle "pfridberg/spaceship-flox@main"
 ```
 
 ### [zinit]
 
 ```zsh
-zinit light "pfridberg/spaceship-flox"
+zinit light "pfridberg/spaceship-flox@main"
 ```
 
 ### [zgen]
 
 ```zsh
-zgen load "pfridberg/spaceship-flox"
+zgen load "pfridberg/spaceship-flox@main"
 ```
 
 ### [sheldon]
 
 ```toml
 [plugins.spaceship-flox]
-github = "pfridberg/spaceship-flox"
+github = "pfridberg/spaceship-flox@main"
 ```
 
 ### Manual
