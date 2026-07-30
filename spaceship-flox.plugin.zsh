@@ -8,9 +8,10 @@
 # ------------------------------------------------------------------------------
 
 SPACESHIP_FLOX_SHOW="${SPACESHIP_FLOX_SHOW=true}"
-SPACESHIP_FLOX_ASYNC="${SPACESHIP_FLOX_ASYNC=true}"
+SPACESHIP_FLOX_ASYNC="${SPACESHIP_FLOX_ASYNC=false}"
 SPACESHIP_FLOX_PREFIX="${SPACESHIP_FLOX_PREFIX="flox:"}"
 SPACESHIP_FLOX_SUFFIX="${SPACESHIP_FLOX_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
+SPACESHIP_FLOX_SYMOBL="${SPACESHIP_FLOX_SYMOBL=}"
 SPACESHIP_FLOX_COLOR="${SPACESHIP_FLOX_COLOR="yellow"}"
 
 # ------------------------------------------------------------------------------
