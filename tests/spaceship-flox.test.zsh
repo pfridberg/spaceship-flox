@@ -50,10 +50,10 @@ test_mocked_version() {
   FLOX_PROMPT_ENVIRONMENTS=$mocked_env
 
   local prefix="%{%B%}$SPACESHIP_FLOX_PREFIX%{%b%}"
-  local content="%{%B%F{$SPACESHIP_FLOX_COLOR}%}($mocked_env)%{%b%f%}"
+  local content="%{%B%F{$SPACESHIP_FLOX_COLOR}%}$SPACESHIP_FLOX_SYMBOL($mocked_env)%{%b%f%}"
   local suffix="%{%B%}$SPACESHIP_FLOX_SUFFIX%{%b%}"
 
-  local expected="$prefix$content$suffix"
+  local expected="$prefix$symbol$content$suffix"
   local actual="$(spaceship::testkit::render_prompt)"
 
   assertEquals "render mocked environment" "$expected" "$actual"
