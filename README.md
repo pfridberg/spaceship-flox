@@ -120,13 +120,14 @@ spaceship add flox
 
 This section is shown only when a Flox environment is active.
 
-| Variable                |              Default               | Meaning               |
-|:------------------------|:----------------------------------:|-----------------------|
-| `SPACESHIP_FLOX_SHOW`   |               `true`               | Show current section  |
-| `SPACESHIP_FLOX_PREFIX` |               `in `                | Prefix before section |
-| `SPACESHIP_FLOX_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after section  |
-| `SPACESHIP_FLOX_SYMBOL` |                `$`                 | Symbol for section    |
-| `SPACESHIP_FLOX_COLOR`  |              `yellow`              | Color of section      |
+| Variable                          |              Default               | Meaning                           |
+|:----------------------------------|:----------------------------------:|-----------------------------------|
+| `SPACESHIP_FLOX_SHOW`             |               `true`               | Show current section              |
+| `SPACESHIP_FLOX_PREFIX`           |               `in `                | Prefix before section             |
+| `SPACESHIP_FLOX_SUFFIX`           | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after section              |
+| `SPACESHIP_FLOX_SYMBOL`           |                `$`                 | Symbol for section                |
+| `SPACESHIP_FLOX_COLOR`            |              `yellow`              | Color of section                  |
+| `SPACESHIP_FLOX_DEFAULT_ENV_SHOW` |              `false`               | Show/hide the default environment |
 
 ## Contributing
 

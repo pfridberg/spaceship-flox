@@ -13,6 +13,7 @@ SPACESHIP_FLOX_PREFIX="${SPACESHIP_FLOX_PREFIX="in "}"
 SPACESHIP_FLOX_SUFFIX="${SPACESHIP_FLOX_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
 SPACESHIP_FLOX_SYMBOL="${SPACESHIP_FLOX_SYMBOL="$"}"
 SPACESHIP_FLOX_COLOR="${SPACESHIP_FLOX_COLOR="yellow"}"
+SPACESHIP_FLOX_DEFAULT_ENV_SHOW="${SPACESHIP_FLOX_DEFAULT_ENV_SHOW=false}"
 
 # ------------------------------------------------------------------------------
 # Section
@@ -28,7 +29,14 @@ spaceship_flox() {
   # Only render if a Flox environment is actively loaded
   [[ -n "$FLOX_PROMPT_ENVIRONMENTS" ]] || return
 
-  local flox_content="(${FLOX_PROMPT_ENVIRONMENTS})"
+  local env_raw="${FLOX_PROMPT_ENVIRONMENTS}"
+
+  # Remove default environment from prompt
+  if [[ $SPACESHIP_FLOX_DEFAULT_ENV_SHOW == false ]]; then
+    env_raw="${env_raw/% default/}"
+  fi
+
+  local flox_content="(${env_raw})"
 
   # Use Spaceship's API to construct the segment cleanly
   # Options: spaceship::section <color> <prefix> <content> <suffix>

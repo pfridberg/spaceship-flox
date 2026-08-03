@@ -9,6 +9,7 @@ SHUNIT_PARENT=$0
 typeset -g SPACESHIP_ROOT="${SPACESHIP_ROOT:=/spaceship}"
 
 # Mocked environment name
+default_env="default"
 mocked_env="mockenv"
 
 # ------------------------------------------------------------------------------
@@ -47,7 +48,7 @@ oneTimeTearDown() {
 
 test_mocked_version() {
   # Prepare the environment
-  FLOX_PROMPT_ENVIRONMENTS=$mocked_env
+  FLOX_PROMPT_ENVIRONMENTS="$mocked_env $default_env"
 
   local prefix="%{%B%}$SPACESHIP_FLOX_PREFIX%{%b%}"
   local content="%{%B%F{$SPACESHIP_FLOX_COLOR}%}$SPACESHIP_FLOX_SYMBOL($mocked_env)%{%b%f%}"
@@ -57,6 +58,20 @@ test_mocked_version() {
   local actual="$(spaceship::testkit::render_prompt)"
 
   assertEquals "render mocked environment" "$expected" "$actual"
+}
+
+test_default_env_show() {
+  FLOX_PROMPT_ENVIRONMENTS="$mocked_env $default_env"
+  SPACESHIP_FLOX_DEFAULT_ENV_SHOW=true
+
+  local prefix="%{%B%}$SPACESHIP_FLOX_PREFIX%{%b%}"
+  local content="%{%B%F{$SPACESHIP_FLOX_COLOR}%}$SPACESHIP_FLOX_SYMBOL($mocked_env $default_env)%{%b%f%}"
+  local suffix="%{%B%}$SPACESHIP_FLOX_SUFFIX%{%b%}"
+
+  local expected="$prefix$symbol$content$suffix"
+  local actual="$(spaceship::testkit::render_prompt)"
+
+  assertEquals "render mocked environment with default" "$expected" "$actual"
 }
 
 # ------------------------------------------------------------------------------
